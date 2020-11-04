@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "aks-2076"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "aks-2076"
+  template:
+    metadata:
+      labels:
+        app: "aks-2076"
+    spec:
+      containers:
+        - name: "aks-2076"
+          image: "vjtestregistry.azurecr.io/aks"
+          ports:
+          - containerPort: 80
